@@ -3,39 +3,34 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  var makeup = {
-    backgroundColor :'gray',
-    color : 'cyan'
-  }
-  var sakib = {name:"Muhammed Tanbir Hossen Sakib",
-               dream:"A passionate webdeveloper",
-               Dept:"CSE"
-}
-  var youmon = {name:"Emon Younes",
-  dream:"Databse developer",
-  Dept:"CSE"
-
-  }
+ 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h5 style={makeup}>My info : {sakib.name + " " +"Dream:" + sakib.dream}</h5>
-        <h5 style = {makeup}>info : {youmon.name + " " + youmon.Dept}</h5>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          React with react
-        </a>
+        <h4 style = {{backgroundColor:'#d9b3ff',padding : '10px',color:'#5900b3',borderRadius:'10px',boxShadow : "10px 10px 10px gray"}}>Friends Information</h4>
+        <Sakib name = "Tanbir Sakib" email = 'iamtsakib@gmail.com'></Sakib>
+        <Sakib name = "Emon Younes" email = 'emonyounes@gmail.com'></Sakib>
+        <Sakib name = "Hassan Tohin" email = 'ghtohine@gmail.com'></Sakib>
+        <Sakib name = "Joybal Vaiyye" email = 'borovaiyye@gmail.com'></Sakib>
+        
       </header>
     </div>
   );
+}
+function Sakib(props){
+  var sakibStyle = {
+    backgroundColor : "#d9b3ff",
+    margin : "10px",
+    padding : '5px',
+    color : "#5900b3",
+    borderRadius : "20px",
+    boxShadow : "10px 10px 10px gray"
+  }
+  return <div style = {sakibStyle}>
+          <h5>Name : {props.name}</h5>
+          <h5>Email: {props.email} </h5>
+          <h5>University : International Islamic University Chittagong</h5>
+         </div>   
 }
 
 export default App;
