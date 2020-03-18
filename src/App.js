@@ -7,17 +7,26 @@ function App() {
     {name : 'Iphone11', price : 'BDT 110000'},
     {name : 'RealmeX2', price : 'BDT 25000'},
     {name : 'Redmi Note8', price : 'BDT 20000'},
-    {name : 'Samsung A50', price : 'BDT 27000'}
+    {name : 'Samsung A50', price : 'BDT 27000'},
+    {name : 'Lenovo A700', price : 'BDT 7000'}
   ]
+ const friends = ['Youmon','Tohin','Joynal','Mir Fahim','Shihab','Murtaza','Himel','Peculiar Anik','Kaiser Hamid','Akash Chowdhury'];
  
   return (
     <div className="App">
       <header className="App-header">
         <h4 style = {{backgroundColor:'#d9b3ff',padding : '10px',color:'#5900b3',borderRadius:'10px',boxShadow : "10px 10px 10px gray"}}>Friends Information</h4>
-        <Products product = {products[0]}></Products>
-        <Products product = {products[1]}></Products>
-        <Products product = {products[2]}></Products>
-        <Products product = {products[3]}></Products>
+        <ul>
+            {
+              friends.map(friends => <li>{friends}</li>)
+            }
+            {
+              products.map(product => <li>{product.name}</li>)
+            }
+        </ul>
+        {
+          products.map(pd => <Products product = {pd}></Products>)
+        }
         <Sakib name = "Tanbir Sakib" email = 'iamtsakib@gmail.com'></Sakib>
         <Sakib name = "Emon Younes" email = 'emonyounes@gmail.com'></Sakib>
         <Sakib name = "Hassan Tohin" email = 'ghtohine@gmail.com'></Sakib>
