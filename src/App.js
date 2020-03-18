@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h4 style = {{backgroundColor:'#d9b3ff',padding : '10px',color:'#5900b3',borderRadius:'10px',boxShadow : "10px 10px 10px gray"}}>Friends Information</h4>
+        <Counter></Counter>
         <ul>
             {
               friends.map(friends => <li>{friends}</li>)
@@ -35,6 +36,17 @@ function App() {
       </header>
     </div>
   );
+}
+function Counter(){
+
+const [count, setCount] = useState(5);
+  return (
+    <div>
+    <h2>Count : {count}</h2>
+    <button onClick = {() => setCount(count+1)}>Increase</button>
+    <button onClick = {() => setCount(count-1)}>Decrease</button>
+    </div>
+  )
 }
 function Sakib(props){
   var sakibStyle = {
